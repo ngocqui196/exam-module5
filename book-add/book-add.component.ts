@@ -3,6 +3,7 @@ import {BookService} from '../../book-service.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Book} from '../../model/book';
 import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-book-add',
@@ -13,7 +14,8 @@ export class BookAddComponent implements OnInit {
   book: Book;
   bookForm: FormGroup;
 
-  constructor(private bookService: BookService,
+  constructor(private router: Router,
+    private bookService: BookService,
               private fb: FormBuilder,) {
     this.bookForm = fb.group({
       id: [],
@@ -29,7 +31,7 @@ export class BookAddComponent implements OnInit {
   bookCreate() {
     console.log(this.bookForm.value);
     this.bookService.createBook(this.bookForm.value).subscribe(res => {
-      console.log(res);
+      this.router.navigate(['/'])
     });
   }
 }

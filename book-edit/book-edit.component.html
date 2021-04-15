@@ -1,4 +1,4 @@
-<form (ngSubmit)="editBook(book.id)">
+<form >
   <div>
     <label>Title:</label>
   </div>
@@ -20,5 +20,6 @@
     <input type="text" [(ngModel)]="book.description" name="description" placeholder="Enter Description" >
 <!--    <input type="text" formControlName="description" placeholder="Enter Description" >-->
   </div>
-  <button>Update</button>
+  <button (click)="editBook(book.id)">Update</button>
+  <button routerLink="">Quay lại</button>
 </form>
