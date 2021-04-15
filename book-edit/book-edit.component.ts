@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BookService} from '../../book-service.service';
 import {Book} from '../../model/book';
 import {Subscription} from 'rxjs';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 
 @Component({
@@ -19,7 +19,8 @@ export class BookEditComponent implements OnInit {
     description: ''
   };
 
-  constructor(private bookService: BookService,
+  constructor(private router: Router,
+    private bookService: BookService,
               private activatedRoute: ActivatedRoute) {
   }
 
@@ -36,7 +37,7 @@ export class BookEditComponent implements OnInit {
   editBook(id: string) {
     console.log(this.book.id);
     this.bookService.editBook(id, this.book).subscribe(res => {
-      this.book = res;
+      this.router.navigate(['/'])
     });
   }
 
