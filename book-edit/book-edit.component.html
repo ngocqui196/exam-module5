@@ -1,0 +1,24 @@
+<form (ngSubmit)="editBook(book.id)">
+  <div>
+    <label>Title:</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="book.title" name="title" placeholder="Enter Title">
+<!--    <input type="text" formControlName="title" placeholder="Enter Title">-->
+  </div>
+ <div>
+    <label>Author:</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="book.author" name="author" placeholder="Enter Author">
+<!--    <input type="text" formControlName="author" placeholder="Enter Author">-->
+  </div>
+ <div>
+    <label>Description:</label>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="book.description" name="description" placeholder="Enter Description" >
+<!--    <input type="text" formControlName="description" placeholder="Enter Description" >-->
+  </div>
+  <button>Update</button>
+</form>

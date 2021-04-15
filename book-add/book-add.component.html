@@ -1,0 +1,22 @@
+<form [formGroup]="bookForm" >
+  <div>
+    <label>Title:</label>
+  </div>
+  <div>
+    <input type="text" formControlName="title" placeholder="Enter Title">
+  </div>
+  <div>
+    <label>Author:</label>
+  </div>
+  <div>
+    <input type="text" formControlName="author" placeholder="Enter Author">
+  </div>
+  <div>
+    <label>Description:</label>
+  </div>
+  <div>
+    <input type="text" formControlName="description" placeholder="Enter Description" >
+  </div>
+  <button (click)="bookCreate()">Create</button>
+  <button routerLink="">Quay về trang chủ</button>
+</form>
